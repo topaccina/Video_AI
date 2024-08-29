@@ -6,7 +6,7 @@ Under development-to join the [Charming Data Community](https://charming-data.ci
 ## Known Code Limitation
 xxxxx <br>
 
-## App structure
+## App structure (TO BE UPDATED)
 
 ```bash
 dash-app-structure
