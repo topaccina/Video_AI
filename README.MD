@@ -3,7 +3,8 @@ Multipage Dash app with interactive charts xxxxxx AI-assisted xxxxx <br>
 
 Under development-to join the [Charming Data Community](https://charming-data.circle.so/c/ai-python-projects/august-project-ai-sentiment-analysis-of-videos) Project initiative <br>
 
-
+## Known Code Limitation
+xxxxx <br>
 
 ## App structure
 
