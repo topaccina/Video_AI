@@ -19,15 +19,14 @@ Under development-to join the [Charming Data Community](https://charming-data.ci
 4. Openai text-embedding-ada-002 for transcripts embeddings <br>
 
 ## Known Code Limitations, potential improvements and  other important notes
-1. this is POC. The numbers of max retrieved comments per video is forced to 10 (hardcoded). By removing this limit all the comments can be collected.
-2. this is POC. For the video search, the video duration option is forced to "short". Code can be improved by accepting the video duration as user preferences.
+1. this is POC. The numbers of max retrieved comments per video is forced to 10 (hardcoded). By removing this limit all the comments can be collected. The comments are not visible to the user now. 
+2. this is POC. For the video search, the video duration option is forced to "short". Code can be improved by accepting the video duration as user preferences. A button for this purpose is already present on the search panel
 3. the video search panel can be improved by enabling more searching option available with You Tube API
 4. To run the code both YOUTUBE_DATA_API_KEY and  OPENAI_API_KEY env variable need to be defined in the local .env
 5. Openai models can be replaced with other options
 6. this is POC. During the video search, the videos w/o comments or w/o trascripts are ignored. The returned results could be less than the max set results. 
 7. PCA can be run if at least two videos retrieved <br>
 
-xxxxx <br>
 
 ## App structure (TO BE UPDATED)
 
@@ -36,21 +35,19 @@ dash-app-structure
 
 |-- .env
 |-- .gitignore
-|-- data
 |-- License
 |-- README.md
 |-- assets  
 |-- components
-|   |-- get_components_country.py
-|   |-- get_components_home.py
+|   |-- home_cards.py
+|   |-- video_card.py
 |-- pages
-|   |-- Home.py
-|   |-- World.py
-|   |-- Countries.py
-|   |-- Conflictsindex.py
+|   |-- home.py
+|   |-- search.py
+|   |-- FAQ.py (placeholder)
 |-- utils
-|   |-- settings.py
-|-- app.py
+|   |-- support.py
+|-- searchApp.py
 |-- requirements.txt
 
 ```
@@ -59,9 +56,9 @@ dash-app-structure
 
 ## Subfolders Details
 ### utils
-code to retrieve the environment vars 
+code to retrieve the environment vars, support functions to extract videos details and data token counts to eval in advance the compatibiltiy with model context windows.
 ### components
-support functions to build components instantiated in the pages layout
+support functions to build some components instantiated in the pages layout
 ### pages
 pages layout code and callbacks
 ### python version
