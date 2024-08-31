@@ -3,6 +3,8 @@ Multipage Dash app for YouTube video search and analysis. AI features implemente
 
 Under development-to join the [Charming Data Community](https://charming-data.circle.so/c/ai-python-projects/august-project-ai-sentiment-analysis-of-videos) Project initiative <br>
 
+[![Watch the video](https://img.youtube.com/vi/-HaNWeulbOA/0.jpg)](https://youtu.be/-HaNWeulbOA)
+
 ## Main App features
 1. search videos by topic. You Tube API running in the background. Capability to interactively refine the search (e.g. published Data, max returned results) via the the control panel.
 2. Summary table listing the retrieved videos. This is ag-grid table with selectable rows. 
