@@ -10,14 +10,14 @@ Under development-to join the [Charming Data Community](https://charming-data.ci
 4. Video comments collected and stored to perform the sentiment analysis and evaluate a video-comments average sentiment score. Sentiment Analysis is implemented by usign LLM. A score from -10 ( the most negative) to 10 (the most positive) is assigned for each comment. An interactive plotly visualization provide an overview of the sentiment for all retrieved videos.
 5. Video Semantic Clustering assisted by the AI. Embedding generated for each videos. PCA technique applied for dimensionality reduction - from n-dim to 2 dim. An interactive plotly visualization helps to identify videos groups with similar/different content. 
 6. App style based on bootstrap standard themes with some  css customization.
-7. Dash store as key component to share video search results between callback and maintain data during the browser session. This allow for data persistency in case of page refresh (e.g. navigate across pages)   
-<br>
-## AI features detatails.
+7. Dash store as key component to share video search results between callback and maintain data during the browser session. This allow for data persistency in case of page refresh (e.g. navigate across pages) <br>
+
+## AI features detatails
 1. Langchain framework (Python AI packages) to interact with LLMs
 2. Openai gpt-4o for the comments sentiment analysis 
 3. Openai gpt-4o for the video transcript summarization
-4. Openai text-embedding-ada-002 for transcripts embeddings
-<br>
+4. Openai text-embedding-ada-002 for transcripts embeddings <br>
+
 ## Known Code Limitations, potential improvements and  other important notes
 
 xxxxx <br>
