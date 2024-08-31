@@ -2,6 +2,7 @@
 Multipage Dash app for YouTube video search and analysis. AI features implemented to improve the user journey in searching videos, comparing and learning.<br>
 
 Under development-to join the [Charming Data Community](https://charming-data.circle.so/c/ai-python-projects/august-project-ai-sentiment-analysis-of-videos) Project initiative <br>
+Click on the image below for a short YouTube video demo
 
 [![Watch the video](https://img.youtube.com/vi/-HaNWeulbOA/0.jpg)](https://youtu.be/-HaNWeulbOA)
 
