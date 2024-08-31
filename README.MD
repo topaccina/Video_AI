@@ -31,7 +31,7 @@ Click on the image below for a short YouTube video demo
 7. PCA can be run if at least two videos retrieved <br>
 
 
-## App structure (TO BE UPDATED)
+## App structure
 
 ```bash
 dash-app-structure
