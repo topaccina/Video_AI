@@ -502,6 +502,7 @@ def sth(n, topic, res_count, pub_date):
         df["view"] = views
         df["author"] = author
         df["duration"] = duration
+        # print(df.comments)
 
         # set token limits to avoid too long (expensive) trascripts passed to the AI
         df = (
@@ -521,7 +522,7 @@ def sth(n, topic, res_count, pub_date):
         )
 
         # first AI features - transcrips summarization
-        print("transcrips summarization")
+        print("transcripts summarization")
         llm = ChatOpenAI(model_name="gpt-4o", openai_api_key=OPENAI_API_KEY)
 
         prompt = ChatPromptTemplate.from_messages(
