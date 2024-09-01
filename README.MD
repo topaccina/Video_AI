@@ -6,6 +6,8 @@ Click on the image below for a short YouTube video demo
 
 [![Watch the video](https://img.youtube.com/vi/-HaNWeulbOA/0.jpg)](https://youtu.be/-HaNWeulbOA)
 
+## VIDEO TO BE UPDATED!!!!!
+
 ## Main App features
 1. search videos by topic. You Tube API running in the background. Capability to interactively refine the search (e.g. published Data, max returned results) via the the control panel.
 2. Summary table listing the retrieved videos. This is ag-grid table with selectable rows. 
@@ -23,7 +25,7 @@ Click on the image below for a short YouTube video demo
 
 ## Known Code Limitations, potential improvements and  other important notes
 1. this is POC. The numbers of max retrieved comments per video is forced to 10 (hardcoded). By removing this limit all the comments can be collected. The comments are not visible to the user now. 
-2. this is POC. For the video search, the video duration option is forced to "short". Code can be improved by accepting the video duration as user preferences. A button for this purpose is already present on the search panel
+2. this is POC. For the video search, the video duration options are limited to "short"" (less 4 min) and "medium" (up to 10 min). Code can be improved by extending the available options.
 3. the video search panel can be improved by enabling more searching option available with You Tube API
 4. To run the code both YOUTUBE_DATA_API_KEY and  OPENAI_API_KEY env variable need to be defined in the local .env
 5. Openai models can be replaced with other options
@@ -31,7 +33,7 @@ Click on the image below for a short YouTube video demo
 7. PCA can be run if at least two videos retrieved <br>
 
 
-## App structure (TO BE UPDATED)
+## App structure
 
 ```bash
 dash-app-structure
