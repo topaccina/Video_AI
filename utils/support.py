@@ -58,7 +58,8 @@ def get_comments(youtube, video_id):
             else:
                 break
     except:
-        comments.append("INVALID")
+        print(f"INVALID_COMMENTS for {video_id}")
+        comments.append("0")
         commentsTokens.append(0)
 
     return comments, commentsTokens
@@ -71,15 +72,14 @@ def get_video_info(videoId):
     try:
         info = loader.load()
 
-        print("VALID")
-        print(videoId)
         transcript = info[0].page_content
         view = info[0].metadata["view_count"]
         author = info[0].metadata["author"]
         length = info[0].metadata["length"]
         transcript_tokens = count_tokens(transcript, "text-embedding-ada-002")
+        print(f"VALID TRANSCRIPT for {videoId}")
     except:
-        print("EXCEPTION_INVALID")
+        print(f"EXCEPTION_INVALID_TRANSCRIPT for {videoId}")
         transcript = "INVALID"
         view = "INVALID"
         author = "INVALID"

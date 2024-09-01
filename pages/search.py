@@ -67,11 +67,30 @@ df = pd.DataFrame(
 df_default = df.copy()
 #########################################################################
 # define components to build the page
-dropdown_menu_items = [
-    dbc.DropdownMenuItem("NOT ACTIVE MENU", id="dropdown-menu-item-notificaton"),
-    dbc.DropdownMenuItem("short - less 4 mins", id="dropdown-menu-item-short"),
-    dbc.DropdownMenuItem("medium - up to 10 mins", id="dropdown-menu-item-medium"),
-]
+button_group = dbc.Container(
+    [
+        dbc.RadioItems(
+            id="radios",
+            className="btn-group",
+            inputClassName="btn-check",
+            labelClassName="btn btn-outline-primary",
+            labelCheckedClassName="active",
+            options=[
+                {"label": "short", "value": 1},
+                {"label": "medium", "value": 2},
+                # {"label": "Option 3", "value": 3},
+            ],
+            value=1,
+        ),
+        # html.Div(id="output"),
+    ],
+    className="radio-group",
+)
+# dropdown_menu_items = [
+#     dbc.DropdownMenuItem("NOT ACTIVE MENU", id="dropdown-menu-item-notificaton"),
+#     dbc.DropdownMenuItem("short - less 4 mins", id="dropdown-menu-item-short"),
+#     dbc.DropdownMenuItem("medium - up to 10 mins", id="dropdown-menu-item-medium"),
+# ]
 
 # define columns to be shown in ag-grid table
 columnDefs = [
@@ -151,7 +170,8 @@ control_panel = dbc.Container(
                         dbc.Container(
                             [
                                 dbc.Label("Duration"),
-                                dbc.DropdownMenu(dropdown_menu_items, label="Options"),
+                                # dbc.DropdownMenu(dropdown_menu_items, label="Options"),
+                                button_group,
                             ],
                             id="input-duration",
                             className="p-0",
@@ -433,12 +453,18 @@ def analyze(n, data):
     State("input-topic", "value"),
     State("input-count", "value"),
     State("input-date", "value"),
+    State("radios", "value"),
     prevent_initial_call=True,
 )
-def sth(n, topic, res_count, pub_date):
+def sth(n, topic, res_count, pub_date, duration):
     print("run YT query")
     if n != None:
         print(topic)
+        print(topic)
+        if duration == 1:
+            videoDuration = "short"
+        else:
+            videoDuration = "medium"
         request = youtube.search().list(
             part="snippet",
             maxResults=res_count,
@@ -447,11 +473,12 @@ def sth(n, topic, res_count, pub_date):
             publishedAfter=f"{pub_date}T00:00:00Z",
             relevanceLanguage="en",
             type="video",
-            videoDuration="short",
+            videoDuration=videoDuration,  # "short",
         )
         response = request.execute()
 
         # extract info from the results to build the dataset
+        print(f"video duration {videoDuration}")
 
         videoId = []
         videoTitle = []
